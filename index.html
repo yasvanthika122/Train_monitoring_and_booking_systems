@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Monitoring and booking System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: "Sriracha", cursive;
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: silver;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+
+/* CSS for main element */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to bottom, rgba(143, 126, 18, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image:url("https://images7.alphacoders.com/356/356471.jpg");
+ background-attachment: fixed;
+background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro h1 {
+  font-family: sans-serif;
+  font-size: 65px;
+  color: #f8ec0b;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 30px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.intro button {
+  background-color: #5edaf0;
+  color: #000;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+}
+
+.achievements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 80px;
+}
+
+.achievements .work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.achievements .work i {
+  width: fit-content;
+  font-size: 50px;
+  color: #050505;
+  border-radius: 50%;
+  border: 2px solid #0c0c0c;
+  padding: 12px;
+}
+
+.achievements .work .work-heading {
+  font-size: 30px;
+  color: #0e0e0e;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.achievements .work .work-text {
+  font-size:20px;
+  color: #0c0c0c;
+  margin: 10px 0;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+.about-me img {
+  width: 600px;
+  max-width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-me-text h2 {
+  font-size: 60px;
+  color: #f3efef;
+  text-transform: uppercase;
+  margin: 0;
+}
+/* .post-content p{
+  font-size: 25px;
+  color: #fefcfc;
+  margin: 10px 0;
+
+}
+.sub-title h4{
+  font-size: 60px;
+  color: #f3efef;
+  text-transform: uppercase;
+  margin: 0;
+} */
+
+.about-me-text p {
+  font-size: 25px;
+  color: #fefcfc;
+  margin: 10px 0;
+}
+
+/* CSS for footer */
+
+
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+
+/*css for nav bar*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body{
+  background: #F5F1EE;
+  font-family: 'Roboto', sans-serif;
+}
+.card{
+  width: 250px;
+  border-radius: 10px;
+}
+
+.card-img-top{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+span.text-muted{
+  font-size: 12px;
+}
+small.text-muted{
+  font-size: 8px;
+}
+h5.mb-0{
+  font-size: 1rem;
+}
+small.ghj{
+  font-size: 9px;
+}
+.mid{
+  background: #ECEDF1;
+}
+h6.ml-1{
+  font-size: 13px;
+}
+small.key{
+  text-decoration: underline;
+  font-size: 9px;
+  cursor: pointer;
+}
+.btn-danger{
+  color: #FFCBD2;
+}
+.btn-danger:focus{
+  box-shadow: none;
+}
+small.justify-content-center{
+  font-size: 9px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.table{
+    background-color: black;
+    text-decoration-color: white;
+    font-size: 25px;
+}
+.nav-item{
+  text-decoration-color: white;
+    font-size: 25px;
+}
+
+@media screen and (max-width:600px){
+    .col-sm-4{
+        margin-bottom: 50px;
+    }
+}
+
+.footer {
+    background: #ece9e9;
+    clear: both;
+}
+
+
+</style>
+</head>
+<body>
+  
+                       
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black" id="navbar">
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">TRAIN MONITORING WEBSITE</span>
+              </nav>
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto mb-lg-0 ">
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1  class="nav-link" href="#home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="#about">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="#promises">SERVISES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="#trainloc">TRAIN LOCATION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="#stations">STATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="file:///E:/train%20monitoring%20system/mongo/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style=color:#ECEDF1 class="nav-link" href="file:///E:/train%20monitoring%20system/trainformget.html.html">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div></br>
+        <nav>
+  </button>
+</nav>
+  <section id="home">
+  <main>
+    <div class="intro">
+      <h1>TRAIN MONITORING AND BOOKING WEBSITE</h1>
+ 
+      <p>This website is used for booking the train as well as it track the train location .</p>
+      <a href="#register" class="btn text-warning" onclick=" window.open('file:///E:/train%20monitoring%20system/product_cart_new.html','_blank')"> Book NOW</a>
+
+    </div>
+    <div class="container">
+      <div class="Dell">
+          <div class="news">
+            <br><br>
+<h1 ><font color="blue"><center>Various Types Of Train</center></font></b></h1>
+              <marquee class="news-content">
+                  <img src="https://engineeringlearn.com/wp-content/uploads/2022/07/Locomotive-Trains-1024x581.jpg.webp" height=400px width=400px middle="200px">
+                  <img src="https://engineeringlearn.com/wp-content/uploads/2022/07/Short-Distance-Trains.jpg.webp" height=400px width=400px middle="200px">
+                  <img src="https://th.bing.com/th/id/OIP.qNU-EZzKuBLLK8wl3YO_YwHaFX?pid=ImgDet&rs=1" height=400px width=400px middle="200px">
+                  <img src="https://images.pexels.com/photos/1793503/pexels-photo-1793503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" height=400px width=400px middle="200px">
+                  <img src="https://th.bing.com/th/id/OIP.8OxjiXan6y27fbxGfFU4HwHaEo?pid=ImgDet&rs=1" height=400px width=400px middle="200px">
+                 
+              </marquee>
+          </div>
+      </div>
+  </div>
+</section>
+<section id="about">
+<section id="aboutus" class="p-5 bg-light text-danger">
+  <div class="container">
+      <div class="row align-items-center justify-content-between">
+          <div class="col-md">
+              <img src="https://2.bp.blogspot.com/-RUAUhWZu5x8/T7J-fSKjhBI/AAAAAAAADqo/FCwlo6YYYz8/s1600/Hdhut.blogspot.com+%252842%2529.jpg" alt="" width="400" height="407">
+          </div>
+          <div class="col-md p-5">
+          <h2>Experience Our Service...<span class="text-dark" align-text="justify"> In Indian Railways</span></h2>
+          <p align-text="justify" class="text-primary">India has some of the most spectacular and unforgettable rail journeys in the world. Here you experience a simple way to find out everything you need to know in one easy place. There's no better way to enjoy India's outback, cities, coastal towns and regional areas in comfort.</p>
+          
+          <p>Indian Railways is the fourth largest railway system in the world. The system was established in the 19th century and serves thousands of tourists and locals every day. India’s first passenger train traveled from Mumbai to Tana, carrying a total of 400 passengers and 1.6 kilometers. From there, Indian Railways has developed into a superpower industry.</p>
+          <font color="blue"><p>Metros and monorails are thriving within cities. Online ticketing system started in 2000’s and is one of the major ways of booking train ticket, today. 4.5 billion km was additionally covered in just ten years (2001-2010). Now, the train tracks cover more than 120,000 km of area in India and special amenities like Wi-Fi, customer information system, ergogenic designs and green technologies have taken Indian Railways to the next level.</p></font>
+          <button class="btn btn-danger" type="button">
+              <span class="spinner-grow spinner-grow-sm" role="status"></span>
+              <a href="#register" class="btn text-warning" onclick=" window.open('./traincal.html','_blank')"> Click here for Train Calculation</a>
+            </button>
+      </div>
+      </div>
+  </div>
+</section>
+</section>
+<div class="container" style="background-color:rgba(229, 222, 221, 0.5);">
+  <div class="row">
+    <div class="col-sm-4">
+     
+        <p class="work-heading">WHO ARE WE</p>
+      <p> company that has served international markets for more than 30 years with an innovative range of products and services. Our first market was acoustic seabed classification, involving capture and analysis of raw seabed data on international coast guard and navy vessels. </p>    </div>
+    <div class="col-sm-4">
+      <i class="fas fa-user-clock" style="font-size:25px;color:black;"></i>
+      <p class="work-heading" >HOW WE DO IT</p>
+      <p>A trusted partner of the world’s major train manufacturers and transit authorities. We have a history of successful innovation closely aligned with the growing needs of our customers and the industry</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="fas fa-person" style="font-size:25px;color:black;"></i>
+      <p class="work-heading">ABOUT</p>
+      <p>We offer flexible, modular, scalable electronic products to rail vehicle manufacturers and transit authorities that enable the efficient movement of people and goods. </p>
+    </div>
+  </div>
+
+    <section id="portfolio" class="pt-5 bg-info">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card-body text-center">
+
+
+  <div>
+  <img src="https://tse1.mm.bing.net/th?id=OIP.OixmvnEVVXugKGij63_hvQHaE8&pid=Api&P=0" alt="me">
+</div>
+  </main>
+</section>
+</div>
+<section id="promises">
+<!-- <section id="portfolio" class="pt-5 bg-dark">
+  <div class="container">
+      <div class="row text-center g-4">
+          <div class="col-md">
+              <div class="card-body text-center">
+                <h1 class="large grey">WHAT WE PROMISE</h1>
+                <br></div> -->
+<section id="portfolio" class="pt-5 bg-light">
+  <div class="container desc">
+    <div class="title-wrapper">
+      <div class="card-body text-center">
+      <h2 class="large grey">WHAT WE PROMISE</h2><br><br>
+    </div>
+    
+  </div>
+  
+  <div class="container showlist">
+    
+        
+    <div class="row list-item">
+      <div class="col-sm-2">
+        <img src="https://www.questertangent.com/wp-content/uploads/2015/08/Total-TrainLife-Care-icon.png">
+      </div>
+      <div class="col-sm-10">
+        <div class="post-content">
+          <h4 class="sub-title">Total TrainLife Care</h4>
+          <p>We stand behind our products for the train’s service lifecycle. Our Total TrainLife Care commitment maximizes the useful life of our products, supports fleet readiness, reduces the total cost of ownership, and meets rail industry longevity needs.</p>
+<p>This translates into:</p>
+<ul>
+<li><strong>20-year service guarantee.</strong> We promise 20 years of service continuity for our products.</li>
+<li><strong>Proactive approach to obsolescence management.</strong> We provide our customers with annual End-Of-Life (EOL) reports to proactively identify and resolve issues with our in-service products.</li>
+<li><strong>Midlife renewal support.</strong> We deliver products that adapt to the form, fit, and function needs of overhaul and retrofit projects.</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+        
+    <div class="row list-item">
+      <div class="col-sm-2">
+        <img src="https://www.questertangent.com/wp-content/uploads/2015/08/Flex-Solution-Prov-icon.png">
+      </div>
+      <div class="col-sm-10">
+        <div class="post-content">
+          <h4 class="sub-title">Flexible solutions</h4>
+          <p>As your one-stop shop for train electronics, Quester Tangent is an expert at solving business problems from early bid support to fleet compatibility and system integration. Today, our products are known for their superior reliability that draws on our service-proven designs and new technology integration. Our onboard and wayside turnkey solutions integrate in-depth engineering expertise, manufacturing capacity, and revenue-service track record.</p>
+        </div>
+      </div>
+    </div>
+    
+        
+    <div class="row list-item">
+      <div class="col-sm-2">
+        <img src="https://www.questertangent.com/wp-content/uploads/2015/08/Operational-Exc-icon.png">
+      </div>
+      <div class="col-sm-10">
+        <div class="post-content">
+          <h4 class="sub-title">Operational excellence</h4>
+          <p>We have more than 20 years of successful experience in designing modular engineered solutions, building flexible products, delivering fully customized train communication network solutions, creating detailed project documentation, and managing a broad spectrum of rail projects on time and on budget. Our state-of-the-art facilities and coordinated processes allow our engineering, manufacturing, and project management teams to deliver efficiently while adhering to the highest standards.</p>
+        </div>
+      </div>
+    </div>
+    
+    <center>
+      <button class="btn btn-danger" type="button">
+        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+        <a href="#register" class="btn text-warning" onclick=" window.open('file:///E:/train%20monitoring%20system/product_cart_new.html','_blank')"> Order Now</a>
+      </button></center><br>
+  </div>
+</section>
+</section>
+
+<section id="trainloc">
+<div class="container-fluid d-flex justify-content-center">
+  <div class="row mt-5">
+    <div class="col-sm-4">
+      <div class="card">
+    <img src="https://th.bing.com/th/id/R.7e201c216935247deafc126613ed4502?rik=DhA5WgL38Y2LJg&riu=http%3a%2f%2f3.bp.blogspot.com%2f-BjOp9cSYLYc%2fUZ7lmlw_1WI%2fAAAAAAAACiA%2flbl0-0hVKt4%2fs1600%2f16-5.jpg&ehk=H6SLSFaIn7%2b78BSK4OdB8tsWqOwQ4yglrGqfOBFqS1E%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" width="100%">
+
+    <div class="card-body pt-0 px-0">
+      
+      
+      <div class="d-flex flex-row justify-content-between px-3 pb-4">
+        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">Year : 1862</small></div>
+        <div class="d-flex flex-column"><h5 class="mb-0">Erode Junction</h5><small class="text-muted text-right"> </small></div>
+      </div>
+      <div class="d-flex flex-row justify-content-between p-3 mid">
+        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">258<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
+   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
+      </div>
+      
+      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" onclick=" window.open('./erode_jun.html','_blank')"><small>VIEW DETAILS</small></button></div>
+      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+    </div>
+  </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="card">
+    <img src="https://www.metrorailnews.in/wp-content/uploads/2019/02/Chennai-Metro-Phase-2.jpg" class="card-img-top" width="100%">
+
+    <div class="card-body pt-0 px-0">
+      
+      
+       <div class="d-flex flex-row justify-content-between px-3 pb-4">
+        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">1856</small></div>
+        <div class="d-flex flex-column"><h5 class="mb-0">Chennai Junction</h5><small class="text-muted text-right"> </small></div>
+      </div>
+      <div class="d-flex flex-row justify-content-between p-3 mid">
+        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">177<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
+   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
+      </div>
+      
+      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>VIEW DETAILS</small></button></div>
+      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+    </div>
+  </div>
+    </div>
+  <div class="col-sm-4">
+      <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.XAM7TOVu-Y4h-4pHRXI_bwAAAA?pid=ImgDet&rs=1" width="100%">
+
+    <div class="card-body pt-0 px-0">
+      
+      
+      <div class="d-flex flex-row justify-content-between px-3 pb-4">
+        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">Year : 1873</small></div>
+        <div class="d-flex flex-column"><h5 class="mb-0">Coimbatore Junction</h5><small class="text-muted text-right"> </small></div>
+      </div>
+      <div class="d-flex flex-row justify-content-between p-3 mid">
+        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">191<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
+   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
+      </div>
+      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>VIEW DETAILS</small> <a href="./sam2.html" target="_blank"></a></button></div>
+      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+    </div>
+  </div>
+    </div>
+  
+  </div>
+</div>
+<br><br>
+<section id="portfolio" class="pt-5 bg-warning">
+  <div class="container">
+      <div class="row text-center g-4">
+          <div class="col-md">
+                        <div class="about-me">
+        <section id="stations">                  
+<table class="table">
+  <thead>
+    <tr>
+      <td><h3 style="color:white;font-size: 30px">There are 505 railway stations in Tamil Nadu. The 5 main Tamil Nadu railway stations are ...</h3>
+      <ul>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/bihar-stations/">Bihar</a></li>
+          <li style="color:whitesmoke"><a>Bihar - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/uttarakhand-stations/">Uttarakhand</a></li>
+          <li style="color:whitesmoke"><a>Uttarakhand - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/telangana-stations/">Telangana</a></li>
+          <li style="color:whitesmoke"><a>Telangana - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/himachal-pradesh-stations/">Himachal Pradesh</a></li>
+          <li style="color:whitesmoke"><a>Himachal Pradesh - Tamil Nadu Railway Stations | List of...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/assam-stations/">Assam</a></li>
+          <li style="color:whitesmoke"><a>Assam - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/maharashtra-stations/">Maharashtra</a></li>
+          <li style="color:whitesmoke"><a>Maharashtra - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/punjab-stations/">Punjab</a></li>
+          <li style="color:whitesmoke"><a>Punjab - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          <li style="color:grey"><a href="https://www.prokerala.com/travel/indian-railway/manipur-stations/">Manipur</a>
+          <li style="color:whitesmoke"><a>Manipur - Tamil Nadu Railway Stations | List of Railway...</a></li>
+          </li><br>
+          <li> <img src="https://files.prokerala.com/maps/india/map-files/india-railway.jpg" width="150px" height="150"></li>
+        </ul>
+      </td>
+    </tr>
+    </thead>
+    </table>
+  </section>
+  </section>
+
+  
+ 
+     <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Train locations</a></li>
+                            <li><a href="#">Stations</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>More Info</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Indian Railways</h3>
+                        <p>India has some of the most spectacular and unforgettable rail journeys in the world. Here you experience a simple way to find out everything you need to know in one easy place. There's no better way to enjoy India's outback, cities, coastal towns and regional areas in comfort.</p>
+                    </div>
+                    <div class="col item social"><a href="#" class="fa fa-facebook"></a></a><a href="#"><i class="fa fa-github"></i></a><a href="#"><i class="fa fa-snapchat"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Trains © 2023</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
