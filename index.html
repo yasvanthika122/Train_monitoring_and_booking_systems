@@ -17,8 +17,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
 body {
-  margin: 0;
+ 
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
 }
 
 /* CSS for header */
@@ -336,6 +340,55 @@ small.justify-content-center{
     background: #ece9e9;
     clear: both;
 }
+/* new  code ....*/
+.navbar {
+            background-color: #333333;
+            
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+
+        .navbar-toggler svg {
+            color: #ffffff;
+        }
+
+        .nav-link {
+            color: #ECEDF1 !important;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 0 10px;
+        }
+
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+
+        /* Additional custom styling */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+        }
+
 
 
 </style>
@@ -343,48 +396,44 @@ small.justify-content-center{
 <body>
   
                        
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black" id="navbar">
-            <nav class="navbar navbar-light bg-light">
-                <span class="navbar-brand mb-0 h1">TRAIN MONITORING WEBSITE</span>
-              </nav>
-            <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-              </svg>
-            </button>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto mb-lg-0 ">
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1  class="nav-link" href="#home">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="#about">ABOUT US</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="#promises">SERVISES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="#trainloc">TRAIN LOCATION</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="#stations">STATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="file:///E:/train%20monitoring%20system/mongo/login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style=color:#ECEDF1 class="nav-link" href="file:///E:/train%20monitoring%20system/trainformget.html.html">Book Now</a>
-                    </li>
-                    <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+          <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black" id="navbar">
+      <span class="navbar-brand mb-0 h1">TRAIN MONITORING WEBSITE</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="#home">HOME</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#promises">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#trainloc">TRAIN LOCATION</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#stations">STATIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mongo/login.html">LOGIN</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="../trainformget.html.html">BOOK NOW</a>
+            </li> -->
+            
+          </ul>
+      </div>
+  </nav>
         </div></br>
         <nav>
   </button>
@@ -395,7 +444,7 @@ small.justify-content-center{
       <h1>TRAIN MONITORING AND BOOKING WEBSITE</h1>
  
       <p>This website is used for booking the train as well as it track the train location .</p>
-      <a href="#register" class="btn text-warning" onclick=" window.open('file:///E:/train%20monitoring%20system/product_cart_new.html','_blank')"> Book NOW</a>
+      <a href="#register" class="btn text-warning" onclick=" window.open('file:///E:/train%20monitoring%20system/product_cart_new.html','_blank')"> Order Now</a>
 
     </div>
     <div class="container">
@@ -542,73 +591,129 @@ small.justify-content-center{
 </section>
 
 <section id="trainloc">
-<div class="container-fluid d-flex justify-content-center">
-  <div class="row mt-5">
-    <div class="col-sm-4">
-      <div class="card">
-    <img src="https://th.bing.com/th/id/R.7e201c216935247deafc126613ed4502?rik=DhA5WgL38Y2LJg&riu=http%3a%2f%2f3.bp.blogspot.com%2f-BjOp9cSYLYc%2fUZ7lmlw_1WI%2fAAAAAAAACiA%2flbl0-0hVKt4%2fs1600%2f16-5.jpg&ehk=H6SLSFaIn7%2b78BSK4OdB8tsWqOwQ4yglrGqfOBFqS1E%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" width="100%">
 
-    <div class="card-body pt-0 px-0">
-      
-      
-      <div class="d-flex flex-row justify-content-between px-3 pb-4">
-        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">Year : 1862</small></div>
-        <div class="d-flex flex-column"><h5 class="mb-0">Erode Junction</h5><small class="text-muted text-right"> </small></div>
-      </div>
-      <div class="d-flex flex-row justify-content-between p-3 mid">
-        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">258<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
-   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
-      </div>
-      
-      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" onclick=" window.open('./erode_jun.html','_blank')"><small>VIEW DETAILS</small></button></div>
-      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-    </div>
-  </div>
-    </div>
-     <div class="col-sm-4">
-      <div class="card">
-    <img src="https://www.metrorailnews.in/wp-content/uploads/2019/02/Chennai-Metro-Phase-2.jpg" class="card-img-top" width="100%">
+  
+  <body style="background-color: #f0f0f0;">
+    <div class="container-fluid d-flex justify-content-center">
+      <div class="row mt-5">
+        <!-- Erode Junction Card -->
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="./images/erode.avif" class="card-img-top" width="100%">
 
-    <div class="card-body pt-0 px-0">
-      
-      
-       <div class="d-flex flex-row justify-content-between px-3 pb-4">
-        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">1856</small></div>
-        <div class="d-flex flex-column"><h5 class="mb-0">Chennai Junction</h5><small class="text-muted text-right"> </small></div>
+  
+            <div class="card-body pt-0 px-0">
+              <div class="d-flex flex-row justify-content-between px-3 pb-4" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <span class="text-muted">Established In</span>
+                  <small class="text-muted">Year: 1862</small>
+                </div>
+                <div class="d-flex flex-column text-end" style="flex: 1;">
+                  <h5 class="mb-0">Erode Junction</h5>
+                </div>
+              </div>
+  
+              <div class="d-flex flex-row justify-content-between p-3" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <small class="text-muted mb-1">Total no of trains</small>
+                  <div class="d-flex flex-row">
+                    <img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1"
+                      width="35px" height="25px">
+                    <div class="ml-2">258</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="mx-3 mt-3 mb-2">
+                <button type="button" class="btn btn-danger btn-block"
+                  onclick="window.open('./erode_jun.html','_blank')">
+                  <small>VIEW DETAILS</small>
+                </button>
+              </div>
+              <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Chennai Junction Card -->
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="./images/chennai.webp" class="card-img-top" width="100%" height="160px">
+            <div class="card-body pt-0 px-0">
+              <div class="d-flex flex-row justify-content-between px-3 pb-4" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <span class="text-muted">Established In</span>
+                  <small class="text-muted">1856</small>
+                </div>
+                <div class="d-flex flex-column text-end" style="flex: 1;">
+                  <h5 class="mb-0">Chennai Junction</h5>
+                </div>
+              </div>
+  
+              <div class="d-flex flex-row justify-content-between p-3" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <small class="text-muted mb-1">Total no of trains</small>
+                  <div class="d-flex flex-row">
+                    <img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1"
+                      width="35px" height="25px">
+                    <div class="ml-2">177</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="mx-3 mt-3 mb-2">
+                <button type="button" class="btn btn-danger btn-block"
+                onclick="window.open('./chennai_jun.html','_blank')">
+                <small>VIEW DETAILS</small>
+              </button>
+              </div>
+              <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Coimbatore Junction Card -->
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="./images/kovai.webp" class="card-img-top" width="110%" height="160px">
+  
+            <div class="card-body pt-0 px-0">
+              <div class="d-flex flex-row justify-content-between px-3 pb-4" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <span class="text-muted">Established In</span>
+                  <small class="text-muted">Year: 1873</small>
+                </div>
+                <div class="d-flex flex-column text-end" style="flex: 1;">
+                  <h5 class="mb-0">Coimbatore Junction</h5>
+                </div>
+              </div>
+  
+              <div class="d-flex flex-row justify-content-between p-3" style="flex: 1;">
+                <div class="d-flex flex-column" style="flex: 1;">
+                  <small class="text-muted mb-1">Total no of trains</small>
+                  <div class="d-flex flex-row">
+                    <img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1"
+                      width="35px" height="25px">
+                    <div class="ml-2">191</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="mx-3 mt-3 mb-2">
+                <button type="button" class="btn btn-danger btn-block"
+                onclick="window.open('./kovai_jun.html','_blank')">
+                <small>VIEW DETAILS</small>
+              </button>
+              </div>
+              <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="d-flex flex-row justify-content-between p-3 mid">
-        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">177<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
-   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
-      </div>
-      
-      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>VIEW DETAILS</small></button></div>
-      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-    </div>
-  </div>
-    </div>
-  <div class="col-sm-4">
-      <div class="card">
-    <img src="https://th.bing.com/th/id/OIP.XAM7TOVu-Y4h-4pHRXI_bwAAAA?pid=ImgDet&rs=1" width="100%">
-
-    <div class="card-body pt-0 px-0">
-      
-      
-      <div class="d-flex flex-row justify-content-between px-3 pb-4">
-        <div class="d-flex flex-column"><span class="text-muted">Established In</span><small class="text-muted">Year : 1873</small></div>
-        <div class="d-flex flex-column"><h5 class="mb-0">Coimbatore Junction</h5><small class="text-muted text-right"> </small></div>
-      </div>
-      <div class="d-flex flex-row justify-content-between p-3 mid">
-        <div class="d-flex flex-column"><small class="text-muted mb-1">Total no of trains</small><div class="d-flex flex-row"><img src="https://th.bing.com/th/id/OIP.sm0-lfN-TM2e1W4FJVXgRQHaHa?pid=ImgDet&rs=1" width="35px" height="25px">191<div class="d-flex flex-column ml-1"><small class="ghj"></small><small class="ghj"></small></div></div></div>
-   <!--     <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small><div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png"><h6 class="ml-1"></h6></div></div>-->
-      </div>
-      <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>VIEW DETAILS</small> <a href="./sam2.html" target="_blank"></a></button></div>
-      <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-    </div>
-  </div>
     </div>
   
-  </div>
-</div>
+ 
+  
 <br><br>
 <section id="portfolio" class="pt-5 bg-warning">
   <div class="container">
